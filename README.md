@@ -4,3 +4,5 @@
 Определение местоположения пользователя осуществляется в автоматическом режиме
 
 [Wiki проекта](https://github.com/SkripalBoris/TravelAlarmClock/wiki)
+
+[Непрерывная интеграция проекта](https://travis-ci.org/SkripalBoris/TravelAlarmClock)
