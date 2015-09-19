@@ -1,5 +1,11 @@
 language: android
 
+android:
+  components:
+    - build-tools-21.1.1
+    - android-21
+    - extra
+
 before_scripts:
     # Gradle
     - wget http://services.gradle.org/distributions/gradle-1.6-bin.zip
