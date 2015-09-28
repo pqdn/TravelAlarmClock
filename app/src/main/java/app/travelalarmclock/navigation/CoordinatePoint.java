@@ -1,10 +1,10 @@
 package app.travelalarmclock.navigation;
 
 /**
+ * Класс CoordinatePoint содержит поля:  координата широты (latitude) и координата долготы (longitude)
+ *
  * @author Бабанин Максим
  * @version 1.0
- *
- * Класс содержит заданные координаты широты (latitude) и долготы (longitude)
  */
 public class CoordinatePoint {
     private double lat;
@@ -18,33 +18,18 @@ public class CoordinatePoint {
         setPoint(lon, lat);
     }
 
-
-    /**
-     * @return Возвращает значение широты
-     */
     public double getLat() {
         return lat;
     }
 
-    /**
-     * Установить значение широты
-     * @param lat Широта
-     */
     public void setLat(double lat) {
         this.lat = lat;
     }
 
-    /**
-     * @return Возвращает значение долготы
-     */
     public double getLon() {
         return lon;
     }
 
-    /**
-     * Установить значение долготы
-     * @param lon Долгота
-     */
     public void setLon(double lon) {
         this.lon = lon;
     }
