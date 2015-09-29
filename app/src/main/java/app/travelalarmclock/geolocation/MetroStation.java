@@ -4,7 +4,6 @@ package app.travelalarmclock.geolocation;
  * Created by Юрий on 27.09.2015.
  */
 public class MetroStation implements Station {
-
     private String name;
     private Geolocation coordinates;
     private MetroLineColor color;
