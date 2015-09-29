@@ -1,28 +1,38 @@
 package app.travelalarmclock.map_realization;
 
+import java.util.ArrayList;
+
 /**
  * Created by Юрий on 28.09.2015.
  */
-public class Graph <Node> {
-    private int numberOfStations;
+public class Graph <NodeType> {
+    private int numberOfNodes;
     private int routes[][];
-    private Node nodes[];
 
-    public Graph (){
-        this.numberOfStations=0;
-        this.routes=null;
-        this.nodes=null;
+    public Graph (int numberOfNodes, int routes[][], int nodes[]) {
+        this.numberOfNodes=numberOfNodes;
+        this.routes=routes;
     }
 
-    public Graph (int numberOfStations, int routes[][], Node stations[]) {
-        this.numberOfStations=numberOfStations;
-        this.routes=routes.clone();
-
+    public int numberOfNodes(){
+        return this.numberOfNodes;
     }
 
-    public Graph (Graph obj) {
-        this.numberOfStations=obj.numberOfStations;
+    public ArrayList<Integer> neighbors(int node){
+        ArrayList<Integer> neighbors = new ArrayList<Integer>();
+        for (int i=0; i<this.numberOfNodes; i++){
+            if (this.routes[node][i]!=0)
+                neighbors.add(i);
+        }
+        return neighbors;
     }
+
+    public int getRouteWeight (int node1, int node2){
+        return this.routes[node1][node2];
+    }
+
+    public void setRouteWeight (int node1, int node2, int weight){
+        this.routes[node1][node2]=weight;
     }
 
 }
