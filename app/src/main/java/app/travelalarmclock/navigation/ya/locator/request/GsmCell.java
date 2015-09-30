@@ -1,4 +1,4 @@
-package app.travelalarmclock.navigation;
+package app.travelalarmclock.navigation.ya.locator.request;
 
 /**
  * Класс GsmCell содержит поля, которые соответствуют данным предастовляемые
