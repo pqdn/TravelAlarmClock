@@ -7,11 +7,6 @@ package app.travelalarmclock.navigation;
  *
  * Класс основан на взаимодействии с API Яндекс Локатор (https://tech.yandex.ru/locator/)
  *
- * API-ключ: Получен 29.09.2015, валиден. Получен для сайта http://example.com/
- * <code>
- * APbFCVYBAAAAT7i3bgIAa3c9f50yGfLqZiI_kOo3YCHHQGoAAAAAAAAAAABlhxM4y7EZWdlRlftVK2MCUSMzxw==
- * </code>
- *
  * @see app.travelalarmclock.navigation.CoordinatePoint
  *
  * @inheritDoc
@@ -20,8 +15,6 @@ package app.travelalarmclock.navigation;
  * @version 1.0
  */
 public class GsmCoordinateGetter extends AbstractCoordinateGetter {
-
-    private static final String keyAPI = "APbFCVYBAAAAT7i3bgIAa3c9f50yGfLqZiI_kOo3YCHHQGoAAAAAAAAAAABlhxM4y7EZWdlRlftVK2MCUSMzxw==";
 
     @Override
     public boolean isWork() {
