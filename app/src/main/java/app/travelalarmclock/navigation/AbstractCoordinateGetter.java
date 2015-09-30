@@ -1,14 +1,14 @@
 package app.travelalarmclock.navigation;
 
 /**
- * Класс GsmCoordinateGetter содержит поля: координаты (coordinate) и ошибка измерений (inaccuracy)
+ * Класс содержит поля: координаты (coordinate) и ошибка измерений (inaccuracy)
  *
  * @author Бабанин Максим
  * @version 1.0
  */
 abstract class AbstractCoordinateGetter {
-    private CoordinatePoint coordinate;
-    private double inaccuracy;
+    protected CoordinatePoint coordinate;
+    protected double inaccuracy;
 
     public AbstractCoordinateGetter() {
         coordinate = new CoordinatePoint();
