@@ -1,11 +1,13 @@
 package app.travelalarmclock.grafinterface.geoalarm.geoalarm;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class zadania_activity extends AppCompatActivity {
+import app.travelalarmclock.R;
+
+public class zadania_activity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
