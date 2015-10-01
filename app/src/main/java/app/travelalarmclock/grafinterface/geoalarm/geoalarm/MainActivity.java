@@ -4,15 +4,28 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.ListView;
 
 import app.travelalarmclock.R;
 
 public class MainActivity extends Activity {
 
+    AutoCompleteTextView mAutoComplete;
+    ListView mListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAutoComplete = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+        mListView = (ListView) findViewById(R.id.listView2);
+
+        addTemplatesInAutoCompleteTextView();
+        addLastResponses();
+
     }
 
     @Override
@@ -35,5 +48,15 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void addTemplatesInAutoCompleteTextView() {
+        String [] templates = {"Лесная", "Политехническая", "пл. Мужества"};
+        mAutoComplete.setAdapter(new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,templates));
+    }
+
+    private void addLastResponses() {
+        String [] previosResult = {"пл. Мужества", "Политехническая"};
+            mListView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,previosResult));
     }
 }
