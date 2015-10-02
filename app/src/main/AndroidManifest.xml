@@ -16,15 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".grafinterface.geoalarm.geoalarm.newzad"
             android:label="@string/app_name" >
-         </activity>
-
+        </activity>
         <activity
             android:name=".grafinterface.geoalarm.geoalarm.zadania_activity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".grafinterface.geoalarm.geoalarm.RouteViewActivity"
+            android:label="@string/title_activity_route_view" >
         </activity>
     </application>
 

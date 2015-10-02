@@ -1,16 +1,21 @@
 package app.travelalarmclock.grafinterface.geoalarm.geoalarm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import app.travelalarmclock.R;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
+    public final static String ARRIVAL_STATION = "app.travelalarmclock.grafinterface.geoalarm.geoalarm.ARRIVAL";
 
     AutoCompleteTextView mAutoComplete;
     ListView mListView;
@@ -26,6 +31,7 @@ public class MainActivity extends Activity {
         addTemplatesInAutoCompleteTextView();
         addLastResponses();
 
+        mListView.setOnItemClickListener(this);
     }
 
     @Override
@@ -51,12 +57,29 @@ public class MainActivity extends Activity {
     }
 
     private void addTemplatesInAutoCompleteTextView() {
-        String [] templates = {"Лесная", "Политехническая", "пл. Мужества"};
-        mAutoComplete.setAdapter(new ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,templates));
+        String[] templates = {"Лесная", "Политехническая", "пл. Мужества"};
+        mAutoComplete.setAdapter(new ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, templates));
     }
 
     private void addLastResponses() {
-        String [] previosResult = {"пл. Мужества", "Политехническая"};
-            mListView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,previosResult));
+        String[] previosResult = {"пл. Мужества", "Политехническая"};
+        mListView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, previosResult));
+    }
+
+    public void goToRouteViewOnClickButton(View view) {
+        Intent intent = new Intent(this, RouteViewActivity.class);
+        AutoCompleteTextView editText = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+        String arrivalStation = editText.getText().toString();
+        intent.putExtra(ARRIVAL_STATION,arrivalStation);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(this,RouteViewActivity.class);
+        TextView textView = (TextView) view;
+        String arrivalStation = textView.getText().toString();
+        intent.putExtra(ARRIVAL_STATION,arrivalStation);
+        startActivity(intent);
     }
 }
