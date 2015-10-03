@@ -9,9 +9,9 @@ public class MetroStation implements Station {
     private MetroLineColor color;
 
     public MetroStation() {
-        this.name="";
-        this.coordinates=new Geolocation(0, 0);
-        this.color=MetroLineColor.NOCOLOR;
+        this.name = "";
+        this.coordinates = new Geolocation(0, 0);
+        this.color = MetroLineColor.NOCOLOR;
     }
 
     public MetroStation(String name, Geolocation coordinates, MetroLineColor color) {
@@ -20,8 +20,8 @@ public class MetroStation implements Station {
         this.color = color;
     }
 
-    public MetroStation(MetroStation obj){
-        this(obj.getName(),obj.getGeolocation(),obj.getColor());
+    public MetroStation(MetroStation obj) {
+        this(obj.getName(), obj.getGeolocation(), obj.getColor());
     }
 
 
@@ -31,33 +31,33 @@ public class MetroStation implements Station {
         this.color = color;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setName(String name){
-        this.name=name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Geolocation getGeolocation(){
+    public Geolocation getGeolocation() {
         //Geolocation returnCoordinates=new Geolocation(this.coordinates);
         return this.coordinates;
     }
 
-    public void setGeolocation(Geolocation coordinates){
-        this.coordinates= new Geolocation(coordinates);
+    public void setGeolocation(Geolocation coordinates) {
+        this.coordinates = new Geolocation(coordinates);
     }
 
     public void setGeolocation(double latitude, double longitude) {
-        this.coordinates = new Geolocation(latitude,longitude);
+        this.coordinates = new Geolocation(latitude, longitude);
     }
 
     public MetroLineColor getColor() {
         return this.color;
     }
 
-    public void setColor (MetroLineColor color){
-        this.color=color;
+    public void setColor(MetroLineColor color) {
+        this.color = color;
     }
 
 }

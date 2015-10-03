@@ -18,8 +18,8 @@ public class Route {
         this.transferStations = transferStations;
         this.hasTransfer = this.transferStations.size() > 2;
 
-        for (int i = 0; i < this.transferStations.size() - 1; i++) {
-            this.route.add(transferStations.get(i));
+        for (int i = 0; i < this.transferStations.size() - 1; i += 2) {
+            //this.route.add(transferStations.get(i));
             int lineNumber = transferStations.get(i).getColor().getCode();
             int begin = map.getStations()[lineNumber].indexOf(transferStations.get(i));
             int end = map.getStations()[transferStations.get(i + 1).getColor().getCode()].indexOf(transferStations.get(i + 1));
@@ -27,11 +27,12 @@ public class Route {
             for (int j = begin; j != end; j = j + sign) {
                 this.route.add(map.getStations()[lineNumber].get(j));
             }
+            //this.route.add(transferStations.get(i+1));
         }
         this.route.add(transferStations.get(this.transferStations.size() - 1));
     }
 
-    public boolean hasTransfer() {
+    public boolean getHasTransfer() {
         return this.hasTransfer;
     }
 
