@@ -5,8 +5,6 @@ import org.junit.Test;
 
 import java.util.List;
 
-import app.travelalarmclock.route_generator.MetroMap;
-
 /**
  * Created by Юрий on 03.10.2015.
  */
