@@ -21,11 +21,11 @@ public class Route {
         for (int i = 0; i < this.transferStations.size() - 1; i++) {
             this.route.add(transferStations.get(i));
             int lineNumber = transferStations.get(i).getColor().getCode();
-            int begin = map.Stations()[lineNumber].indexOf(transferStations.get(i));
-            int end = map.Stations()[transferStations.get(i + 1).getColor().getCode()].indexOf(transferStations.get(i + 1));
+            int begin = map.getStations()[lineNumber].indexOf(transferStations.get(i));
+            int end = map.getStations()[transferStations.get(i + 1).getColor().getCode()].indexOf(transferStations.get(i + 1));
             int sign = (end - begin) / Math.abs(end - begin);
             for (int j = begin; j != end; j = j + sign) {
-                this.route.add(map.Stations()[lineNumber].get(j));
+                this.route.add(map.getStations()[lineNumber].get(j));
             }
         }
         this.route.add(transferStations.get(this.transferStations.size() - 1));
