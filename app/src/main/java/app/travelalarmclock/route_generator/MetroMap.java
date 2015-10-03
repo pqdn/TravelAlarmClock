@@ -1,7 +1,7 @@
 package app.travelalarmclock.route_generator;
 
-import app.travelalarmclock.geolocation.MetroLineColor;
-import app.travelalarmclock.geolocation.MetroStation;
+import app.travelalarmclock.route_generator.geolocation.MetroLineColor;
+import app.travelalarmclock.route_generator.geolocation.MetroStation;
 
 /**
  * Created by Юрий on 27.09.2015.
@@ -155,5 +155,13 @@ public class MetroMap {
 
     public int NumberOfStations (){
         return this.numberOfStations;
+    }
+
+    public int[][] RoutesMatrix (){
+        return this.routes;
+    }
+
+    public MetroStation[] StationsList(){
+        return this.stations;
     }
 }

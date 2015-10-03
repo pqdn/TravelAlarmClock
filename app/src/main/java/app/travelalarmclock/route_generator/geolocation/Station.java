@@ -1,4 +1,4 @@
-package app.travelalarmclock.geolocation;
+package app.travelalarmclock.route_generator.geolocation;
 
 /**
  * Created by Юрий on 28.09.2015.
