@@ -29,7 +29,7 @@ public class RoutesBuilder {
         this.rotes = new ArrayList<Route>();
         List<MetroStation> transferStations;
         //Построение всех возможных маршрутов с не более чем двумя пересадками.
-        for (int i = 0; i < metroMap.getNumberOfLines(); i++) {
+        for (int i = 0; i <metroMap.getNumberOfLines(); i++) {
             transferStations = new ArrayList<MetroStation>();
             transferStations.add(initialStation);
             if (metroMap.getLines()[initialStation.getColor().getCode()][i] != null)

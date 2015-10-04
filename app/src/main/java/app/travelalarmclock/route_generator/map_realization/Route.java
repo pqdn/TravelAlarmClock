@@ -30,7 +30,7 @@ public class Route {
     /**
      * Создает экземпляр маршрута по следующим входным параметрам:
      *
-     * @param map - cхема метрополитена,
+     * @param map              - cхема метрополитена,
      * @param transferStations - список "опорных" станций.
      */
     public Route(MetroMap map, List<MetroStation> transferStations) {
@@ -41,21 +41,27 @@ public class Route {
         и довбавляется к общему маршруту
          */
         for (int i = 0; i < this.transferStations.size() - 1; i += 2) {
-            //this.route.add(transferStations.get(i));
             int lineNumber = transferStations.get(i).getColor().getCode();
             int begin = map.getStations().get(lineNumber).indexOf(transferStations.get(i));
             int end = map.getStations().get(lineNumber).indexOf(transferStations.get(i + 1));
-            int sign = (end - begin) / Math.abs(end - begin);
-            for (int j = begin; j != end+1; j = j + sign) {
-                this.route.add(map.getStations().get(lineNumber).get(j));
+            int sign;
+            if (begin <= end) {
+                for (int j = begin; j <= end; j++) {
+                    this.route.add(map.getStations().get(lineNumber).get(j));
+                }
             }
-            //this.route.add(transferStations.get(i+1));
+            else
+            {
+                for (int j = begin; j>=end; j--) {
+                    this.route.add(map.getStations().get(lineNumber).get(j));
+                }
+            }
         }
-        this.route.add(transferStations.get(this.transferStations.size() - 1));
     }
 
     /**
      * Метод отвечающий за наличие пересадок
+     *
      * @return возвращает "true" при наличии пересадок и "false" при их отсутствии
      */
     public boolean getHasTransfer() {
@@ -68,7 +74,6 @@ public class Route {
     public List<MetroStation> getRoute() {
         return this.route;
     }
-
 
     /**
      * @return возвращает список станций на маршруте

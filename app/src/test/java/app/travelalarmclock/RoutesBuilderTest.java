@@ -55,7 +55,7 @@ public class RoutesBuilderTest {
         rotes=routesBuilder.getRotes();
 
         for (Route rote:rotes){
-            System.out.println("Маршрут:");
+            System.out.println("\nМаршрут:");
             for (MetroStation station:rote.getRoute()){
                 System.out.println(station.getName());
             }
