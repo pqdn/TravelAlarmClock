@@ -9,10 +9,26 @@ import app.travelalarmclock.route_generator.geolocation.MetroStation;
 /**
  * Created by Юрий on 27.09.2015.
  */
+
+/**
+ * Класс хранит данные о метрополитене.
+ */
 public class MetroMap {
+    /**
+     * Количество станциий в метрополитене.
+     */
     private int numberOfStations;
+    /**
+     * Количество веток в метрополитене.
+     */
     private int numberOfLines;
+    /**
+     * Массив из веток мерополитена, каждая ветка представлена списком станций.
+     */
     private List<MetroStation> stations[];
+    /**
+     * Двумерный массив с пересадочными станциями
+     */
     private MetroStation lines[][];
 
     public MetroMap() {
