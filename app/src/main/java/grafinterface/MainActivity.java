@@ -1,4 +1,4 @@
-package app.travelalarmclock.grafinterface.geoalarm.geoalarm;
+package grafinterface;
 
 import android.app.Activity;
 import android.content.Intent;
