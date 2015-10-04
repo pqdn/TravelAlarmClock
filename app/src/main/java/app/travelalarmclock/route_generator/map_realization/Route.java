@@ -43,11 +43,11 @@ public class Route {
         for (int i = 0; i < this.transferStations.size() - 1; i += 2) {
             //this.route.add(transferStations.get(i));
             int lineNumber = transferStations.get(i).getColor().getCode();
-            int begin = map.getStations()[lineNumber].indexOf(transferStations.get(i));
-            int end = map.getStations()[lineNumber].indexOf(transferStations.get(i + 1));
+            int begin = map.getStations().get(lineNumber).indexOf(transferStations.get(i));
+            int end = map.getStations().get(lineNumber).indexOf(transferStations.get(i + 1));
             int sign = (end - begin) / Math.abs(end - begin);
-            for (int j = begin; j != end; j = j + sign) {
-                this.route.add(map.getStations()[lineNumber].get(j));
+            for (int j = begin; j != end+1; j = j + sign) {
+                this.route.add(map.getStations().get(lineNumber).get(j));
             }
             //this.route.add(transferStations.get(i+1));
         }

@@ -51,7 +51,7 @@ public class RoutesBuilder {
     /**
      * @return возвращает список возможных маршрутов
      */
-    List<Route> getRotes() {
+    public List<Route> getRotes() {
         return this.rotes;
     }
 
