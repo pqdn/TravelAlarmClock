@@ -7,7 +7,7 @@ package app.travelalarmclock.navigation;
  *
  * Класс основан на взаимодействии с API Яндекс Локатор (https://tech.yandex.ru/locator/)
  *
- * @see app.travelalarmclock.navigation.CoordinatePoint
+ * @see CoordinatePoint
  *
  * @inheritDoc
  *
@@ -15,6 +15,8 @@ package app.travelalarmclock.navigation;
  * @version 1.0
  */
 public class GsmCoordinateGetter extends AbstractCoordinateGetter {
+
+    // ererehfgdut7o9p
 
     @Override
     public boolean isWork() {
