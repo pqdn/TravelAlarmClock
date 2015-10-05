@@ -7,6 +7,7 @@ package app.travelalarmclock.navigation;
  *  либо при помощи анализа gsm/wi-fi сетей.
  *
  * @see GsmCoordinateGetter
+ * @see GpsCoordinateGetter
  * @see CoordinatePoint
  *
  * @author Бабанин Максим
@@ -14,6 +15,7 @@ package app.travelalarmclock.navigation;
  */
 public class CoordinateGetter {
     GsmCoordinateGetter gsmCoordinateGetter;
+    GpsCoordinateGetter gpsCoordinateGetter;
 
     public CoordinatePoint getCoordinate(){
 

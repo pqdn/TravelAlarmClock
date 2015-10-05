@@ -16,8 +16,6 @@ package app.travelalarmclock.navigation;
  */
 public class GsmCoordinateGetter extends AbstractCoordinateGetter {
 
-    // ererehfgdut7o9p
-
     @Override
     public boolean isWork() {
         return false;
